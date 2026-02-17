@@ -1,0 +1,23 @@
+server:
+  port: 8181
+  tomcat:
+    max-threads: 600
+  servlet:
+    context-path: /pathfinder
+    session:
+      cookie:
+        name: AUTHSESSION
+spring:
+  thymeleaf:
+  cache: false
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path=: /v3/api-docs
+    enabled: true
+
+
+
