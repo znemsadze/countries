@@ -36,7 +36,7 @@ public class PathFinder {
                     visited.add(neighbor);
                     parentMap.put(neighbor, current);
                     if (neighbor.equals(destination)) {
-                        return reconstructPath(parentMap, origin, destination);
+                        return reconstructPath(parentMap,  destination);
                     }
                     queue.add(neighbor);
                 }
@@ -46,15 +46,13 @@ public class PathFinder {
     }
 
     private List<String> reconstructPath(Map<String, String> parentMap,
-                                         String origin, String destination) {
+                                          String destination) {
         LinkedList<String> path = new LinkedList<>();
         String current = destination;
-
         while (current != null) {
             path.addFirst(current);
             current = parentMap.get(current);
         }
-
         return path;
     }
 }
